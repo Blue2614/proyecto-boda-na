@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0b">
+  <title>Nayara & Alejandro · 3 de julio de 2027</title>
+  <meta name="description" content="La invitación de boda de Nayara y Alejandro. 3 de julio de 2027.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+    :root{--black:#0b0b0b;--gold:#c9a96a;--gold-light:#e8d6a8;--cream:#f7f2e8;--muted:#bdb5a7}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--black);color:var(--cream);font-family:Montserrat,Arial,sans-serif;font-weight:300}
+    button,input,textarea,select{font:inherit}
+    .cover{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:36px 20px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#252017 0%,#11100e 42%,#080808 78%)}
+    .cover:before,.cover:after{content:"";position:absolute;inset:20px;border:1px solid rgba(201,169,106,.42);pointer-events:none}
+    .cover:after{inset:28px;border-color:rgba(201,169,106,.15)}
+    .cover-inner{position:relative;z-index:1;max-width:680px;animation:arrive 1.4s ease both}
+    .eyebrow{font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light);line-height:1.8}
+    h1,h2,h3,.names{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400}
+    .monogram{width:76px;height:76px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;margin:30px auto;color:var(--gold-light);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.55rem;letter-spacing:.08em}
+    .names{font-size:clamp(3.5rem,10vw,6.7rem);line-height:.92;margin:0;color:var(--cream)}
+    .amp{color:var(--gold);font-style:italic;font-size:.8em}
+    .date{margin:26px 0 34px;color:var(--gold-light);letter-spacing:.2em;text-transform:uppercase;font-size:.78rem}
+    .open-btn{display:inline-flex;align-items:center;gap:14px;padding:15px 25px;border:1px solid var(--gold);color:var(--cream);text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;transition:background .25s,color .25s}
+    .open-btn:hover{background:var(--gold);color:#111}
+    .open-btn span{font-size:1rem;color:var(--gold)}
+    .open-btn:hover span{color:#111}
+    .cover-note{margin-top:28px;color:var(--muted);font-size:.7rem;letter-spacing:.08em}
+    main{display:none}
+    main.visible{display:block;animation:arrive .8s ease both}
+    .section{padding:76px 22px;text-align:center;max-width:850px;margin:auto}
+    .section + .section{border-top:1px solid rgba(201,169,106,.2)}
+    .kicker{font-size:.65rem;text-transform:uppercase;letter-spacing:.28em;color:var(--gold)}
+    h2{font-size:clamp(2.3rem,7vw,3.6rem);margin:12px 0 18px}
+    .copy{color:#d1c9bb;line-height:1.9;font-size:.92rem;max-width:590px;margin:0 auto}
+    .rule{width:58px;height:1px;background:var(--gold);margin:26px auto}
+    .details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}
+    .detail{border:1px solid rgba(201,169,106,.35);padding:22px 14px}
+    .detail strong{display:block;color:var(--gold-light);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.45rem;font-weight:500;margin-bottom:7px}
+    form{max-width:540px;margin:30px auto 0;text-align:left}
+    label{display:block;font-size:.72rem;letter-spacing:.04em;color:var(--gold-light);margin:18px 0 8px}
+    input,textarea,select{width:100%;background:#151412;border:1px solid #514630;color:var(--cream);padding:13px 12px;border-radius:0}
+    input:focus,textarea:focus,select:focus{outline:1px solid var(--gold)}
+    .radio-row{display:flex;gap:20px;flex-wrap:wrap}
+    .radio-row label{display:flex;align-items:center;gap:8px;margin:8px 0;color:var(--cream)}
+    .radio-row input{width:auto;accent-color:var(--gold)}
+    .submit{margin-top:22px;background:var(--gold);color:#111;border:0;padding:15px 20px;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;cursor:pointer;width:100%}
+    .notice{font-size:.75rem;color:var(--muted);line-height:1.7;margin-top:14px}
+    footer{text-align:center;padding:38px 20px 50px;color:var(--gold-light);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.4rem}
+    .hidden{display:none!important}
+    @keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:480px){.cover:before{inset:12px}.cover:after{inset:19px}.details{grid-template-columns:1fr}.section{padding:60px 22px}.names{font-size:clamp(3.3rem,15vw,5rem)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <section class="cover" id="portada" aria-label="Portada de la invitación">
+    <div class="cover-inner">
+      <div class="eyebrow">Una historia · Un día · Para siempre</div>
+      <div class="monogram" aria-label="N y A">N <span style="color:#c9a96a">&</span> A</div>
+      <h1 class="names">Nayara<br><span class="amp">&</span> Alejandro</h1>
+      <p class="date">3 de julio de 2027</p>
+      <button class="open-btn" id="openInvite" type="button">Abrir invitación <span>↗</span></button>
+      <p class="cover-note">Nos encantaría compartir este día contigo</p>
+    </div>
+  </section>
+  <main id="invitation">
+    <section class="section">
+      <div class="kicker">¡Nos casamos!</div>
+      <h2>Y queremos celebrarlo contigo</h2>
+      <div class="rule"></div>
+      <p class="copy">Hay días que se convierten en recuerdos para toda la vida. Nos hace mucha ilusión compartir el comienzo de esta nueva aventura con las personas que forman parte de nuestra historia.</p>
+      <div class="details">
+        <div class="detail"><strong>3 de julio de 2027</strong><span>Reserva la fecha</span></div>
+        <div class="detail"><strong>Nayara & Alejandro</strong><span>¡Nos vemos en la boda!</span></div>
+      </div>
+      <p class="notice">Próximamente añadiremos aquí los detalles de la ceremonia y la celebración.</p>
+    </section>
+    <section class="section" id="confirmacion">
+      <div class="kicker">Tu respuesta</div>
+      <h2>¿Nos acompañas?</h2>
+      <div class="rule"></div>
+      <p class="copy">Confírmanos si podrás acompañarnos y déjanos cualquier información que debamos tener en cuenta.</p>
+      <form id="rsvpForm">
+        <label for="guestNames">Nombre y apellidos de los asistentes</label>
+        <textarea id="guestNames" name="guestNames" rows="2" placeholder="Escribe los nombres de las personas invitadas" required></textarea>
+        <label>¿Podréis asistir?</label>
+        <div class="radio-row">
+          <label><input type="radio" name="attendance" value="Sí" required> Sí, allí estaremos</label>
+          <label><input type="radio" name="attendance" value="No"> Lo sentimos, no podremos</label>
+        </div>
+        <label for="guestCount">Número total de asistentes</label>
+        <input id="guestCount" name="guestCount" type="number" min="0" max="20" placeholder="Incluye a todas las personas invitadas" required>
+        <label for="dietary">Alergias, intolerancias o necesidades alimentarias</label>
+        <textarea id="dietary" name="dietary" rows="3" placeholder="Indica cuáles o escribe «ninguna»"></textarea>
+        <label>¿Necesitaréis autobús?</label>
+        <div class="radio-row">
+          <label><input type="radio" name="bus" value="Sí"> Sí</label>
+          <label><input type="radio" name="bus" value="No"> No</label>
+          <label><input type="radio" name="bus" value="No lo sé"> No lo sé todavía</label>
+        </div>
+        <button class="submit" type="submit">Preparar confirmación</button>
+        <p class="notice" id="formNotice">Esta es una primera maqueta: todavía no envía ni guarda respuestas. Conectaremos el formulario a una base de datos antes de usarlo con invitados reales.</p>
+      </form>
+    </section>
+    <footer>Con todo nuestro cariño · N & A</footer>
+  </main>
+  <script>
+    const openButton = document.getElementById('openInvite');
+    const main = document.getElementById('invitation');
+    openButton.addEventListener('click', () => {
+      main.classList.add('visible');
+      main.style.display = 'block';
+      document.getElementById('confirmacion').setAttribute('tabindex','-1');
+      main.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    });
+    document.getElementById('rsvpForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      document.getElementById('formNotice').textContent = '¡Gracias! La maqueta funciona visualmente, pero aún no se ha enviado ni guardado ninguna respuesta. Lo conectaremos en el siguiente paso.';
+    });
+  </script>
+</body>
+</html>
