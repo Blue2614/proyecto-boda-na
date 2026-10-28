@@ -124,12 +124,24 @@
 .exact-cover-open{position:absolute;left:50%;bottom:2.5%;transform:translateX(-50%);min-width:190px;padding:13px 18px;background:rgba(8,8,8,.94);border:1px solid #c7a35d;color:#ead8b5;font-size:9px;letter-spacing:1.5px;box-shadow:0 0 18px #000}
 .exact-cover-open span{margin-left:10px}
 @media(max-height:560px) and (orientation:landscape){.exact-cover-wrap{width:auto;height:100svh}.exact-cover-image{width:auto;height:100%;max-width:100vw}.exact-cover-open{bottom:2%}}
+
+/* Asegura que la portada ocupe la pantalla y tenga una alternativa visible si falla la imagen */
+#cover{padding:0!important;min-height:100svh!important;height:100svh!important;align-items:center!important;justify-content:center!important;background:#080807!important}
+.exact-cover-wrap{width:min(100vw,calc(100svh * .673));height:min(100svh,calc(100vw / .673));min-height:420px;position:relative;flex:none;overflow:hidden}
+.exact-cover-image{width:100%;height:100%;display:block;object-fit:contain}
+.exact-cover-open{z-index:5}
+.cover-fallback{width:100%;height:100%;padding:50px 24px 75px;display:flex;flex-direction:column;align-items:center;justify-content:space-around;text-align:center;color:#d9bd83;border:1px solid #c7a35d;outline:1px solid #c7a35d55;outline-offset:-8px;background:radial-gradient(ellipse at center,#211a10,#080808 72%);font-family:Georgia,serif}
+.cover-fallback .names{font-size:clamp(34px,10vw,54px);letter-spacing:4px;line-height:1.15}
+.cover-fallback .date{font:10px Montserrat,Arial,sans-serif;letter-spacing:4px}
+.cover-fallback .orn{font-size:20px;letter-spacing:8px}
+.cover-fallback .sub{font-size:12px;letter-spacing:3px;color:#f0e5ce}
+@media(max-height:560px) and (orientation:landscape){.exact-cover-wrap{width:auto;height:100svh;min-height:0}.exact-cover-image{width:auto;max-width:100vw}}
 </style></head>
 <body>
 <svg class="stars-bg" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#c7a35d" stroke-width=".65" opacity=".65"><path d="M20 115L65 155L101 104L142 148L184 88L224 126L263 67M23 626L66 581L109 621L154 576M241 547L279 501L321 535L367 482"/></g><g fill="#f1d9a2"><circle cx="20" cy="115" r="1.5"/><circle cx="65" cy="155" r="1.7"/><circle cx="101" cy="104" r="1.4"/><circle cx="142" cy="148" r="1.5"/><circle cx="184" cy="88" r="2"/><circle cx="224" cy="126" r="1.5"/><circle cx="263" cy="67" r="1.5"/><circle cx="23" cy="626" r="1.5"/><circle cx="66" cy="581" r="1.7"/><circle cx="109" cy="621" r="1.4"/><circle cx="154" cy="576" r="1.5"/><circle cx="241" cy="547" r="1.5"/><circle cx="279" cy="501" r="1.7"/><circle cx="321" cy="535" r="1.4"/><circle cx="367" cy="482" r="1.5"/></g></svg>
 <section class="screen active" id="cover" aria-label="Portada de la invitación de boda">
-  <div class="exact-cover-wrap">
-    <img class="exact-cover-image" src="cover.jpg" alt="Invitación de boda de Nayara y Alejandro, 3 de julio de 2027">
+  <div class="exact-cover-wrap" id="coverWrap">
+    <img class="exact-cover-image" src="./cover.jpg?v=2" alt="Invitación de boda de Nayara y Alejandro, 3 de julio de 2027">
     <button class="btn exact-cover-open" id="openBtn">ABRIR INVITACIÓN <span>↗</span></button>
   </div>
 </section>
@@ -141,7 +153,7 @@
 <section class="section" id="goodbye" style="border-top:1px solid #c7a35d30"><div class="ornament">✦ ── ✧ ── ✦</div><div class="eyebrow">Y después de la boda...</div><h2>¡Muchas gracias!</h2><p class="copy">Estamos deseando compartir este día tan especial con vosotros y crear recuerdos que nos acompañen para siempre.</p><p class="script">Con todo nuestro cariño,<br>Nayara &amp; Alejandro</p><div class="monogram">N <span style="font-size:22px">&amp;</span> A</div><div class="footer">3 · Julio · 2027<br><br>Una historia extraordinaria, escrita juntos.</div></section></div>
 <script>
 const qs=new URLSearchParams(location.search);const token=qs.get('invitacion');/* Para activar invitaciones individuales hay que validar tokens en una base de datos; no se deben poner nombres de invitados en código público. */
-document.getElementById('openBtn').addEventListener('click',()=>{document.getElementById('cover').classList.remove('active');document.getElementById('mainSite').classList.add('active');window.scrollTo(0,0)});
+const coverImage=document.querySelector('.exact-cover-image');coverImage.addEventListener('error',()=>{const w=document.getElementById('coverWrap');w.innerHTML='<div class="cover-fallback"><div class="orn">✧ · ✦ · ✧</div><div class="sub">CON MUCHA ILUSIÓN OS INVITAMOS A CELEBRAR</div><div class="names">NAYARA<br><span style="font-size:.6em">&amp;</span><br>ALEJANDRO</div><div class="sub">NOS CASAMOS</div><div class="date">SÁBADO · 03 JULIO 2027</div><div class="orn">✧ ── ✦ ── ✧</div><button class="btn exact-cover-open" id="openBtn">ABRIR INVITACIÓN <span>↗</span></button></div>';});document.getElementById('openBtn').addEventListener('click',()=>{document.getElementById('cover').classList.remove('active');document.getElementById('mainSite').classList.add('active');window.scrollTo(0,0)});
 const nav=document.getElementById('nav'),menu=document.getElementById('menuBtn');menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(nav.classList.contains('open')));menu.textContent=nav.classList.contains('open')?'×':'☰'});
 function go(id){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})}document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goto)));
 const wedding=new Date('2027-07-03T00:00:00');function countdown(){let n=wedding-new Date();document.getElementById('countdown').textContent=n<=0?'¡Hoy comienza nuestra aventura!':Math.floor(n/86400000)+' días · '+Math.floor(n%86400000/3600000)+' h · '+Math.floor(n%3600000/60000)+' min'}countdown();setInterval(countdown,60000);
