@@ -104,11 +104,29 @@
 #cover .cover-open{box-shadow:0 4px 22px #0009}
 @media(max-height:700px){#cover .cover-content{padding-top:48px;padding-bottom:170px}#cover .cover-intro{line-height:1.65}#cover .cover-script{margin-top:7px}#cover .cover-divider{margin:10px auto 12px}#cover .cover-event-row{margin:10px 0 7px}#cover .cover-event svg{height:29px}#cover .cover-quote{margin-top:7px;padding-top:9px}#cover .cover-bottom-art{height:145px}#cover .cover-cta{bottom:34px}}
 
+
+/* Corrección de portada basada en la imagen de referencia: constelaciones, marca de agua y ciudad */
+#cover .cover-constellations{height:100%;opacity:.94;z-index:0}
+#cover .cover-watermark{top:19%;left:-13%;right:-13%;width:126%;font-size:clamp(270px,82vw,490px);letter-spacing:-.14em;line-height:.78;white-space:nowrap;color:#d6c5a4;opacity:.075;text-shadow:0 0 1px #d6c5a4}
+#cover .cover-watermark span{font-size:.42em;vertical-align:middle;margin:0 -.04em}
+#cover .cover-content{z-index:2}
+#cover .cover-bottom-art{height:clamp(175px,29vh,250px);opacity:.88;z-index:1;left:-24px;right:-24px}
+#cover .cover-cta{background:linear-gradient(135deg,#090909f0,#100e0ae8);border-color:#b9955a;box-shadow:0 0 0 1px #b9955a26 inset}
+#cover .cover-open{background:linear-gradient(110deg,#c7a35d20,#11100e,#c7a35d20);border-color:#c7a35d;color:#ead8b5}
+@media(max-height:760px){#cover .cover-watermark{top:18%;font-size:clamp(250px,78vw,400px)}}
+
 </style></head>
 <body>
 <svg class="stars-bg" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#c7a35d" stroke-width=".65" opacity=".65"><path d="M20 115L65 155L101 104L142 148L184 88L224 126L263 67M23 626L66 581L109 621L154 576M241 547L279 501L321 535L367 482"/></g><g fill="#f1d9a2"><circle cx="20" cy="115" r="1.5"/><circle cx="65" cy="155" r="1.7"/><circle cx="101" cy="104" r="1.4"/><circle cx="142" cy="148" r="1.5"/><circle cx="184" cy="88" r="2"/><circle cx="224" cy="126" r="1.5"/><circle cx="263" cy="67" r="1.5"/><circle cx="23" cy="626" r="1.5"/><circle cx="66" cy="581" r="1.7"/><circle cx="109" cy="621" r="1.4"/><circle cx="154" cy="576" r="1.5"/><circle cx="241" cy="547" r="1.5"/><circle cx="279" cy="501" r="1.7"/><circle cx="321" cy="535" r="1.4"/><circle cx="367" cy="482" r="1.5"/></g></svg>
 <section class="screen active" id="cover">
-<svg class="cover-constellations" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#c7a35d" stroke-width=".7" opacity=".75"><path d="M10 88L55 65L91 93L134 56L171 89L214 52L252 77L294 40L341 72L379 58M22 134L61 111L91 93L125 120L171 89L202 119L252 77L289 111L341 72L373 130"/></g><g fill="#f1d9a2"><circle cx="55" cy="65" r="1.6"/><circle cx="91" cy="93" r="1.5"/><circle cx="134" cy="56" r="1.5"/><circle cx="171" cy="89" r="2.5"/><circle cx="214" cy="52" r="1.7"/><circle cx="252" cy="77" r="1.4"/><circle cx="294" cy="40" r="1.5"/><circle cx="341" cy="72" r="1.5"/></g><g fill="#c7a35d" opacity=".45"><circle cx="29" cy="185" r=".8"/><circle cx="72" cy="228" r=".8"/><circle cx="326" cy="176" r=".8"/><circle cx="355" cy="246" r=".8"/><circle cx="43" cy="347" r=".7"/><circle cx="340" cy="380" r=".8"/><circle cx="61" cy="530" r=".7"/><circle cx="318" cy="485" r=".8"/></g></svg>
+<svg class="cover-constellations" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><radialGradient id="starGlow"><stop stop-color="#fff0bd" stop-opacity=".95"/><stop offset=".18" stop-color="#e6bd6b" stop-opacity=".48"/><stop offset="1" stop-color="#c7a35d" stop-opacity="0"/></radialGradient><linearGradient id="starArc" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#8c6a35" stop-opacity="0"/><stop offset=".5" stop-color="#d9b66f" stop-opacity=".65"/><stop offset="1" stop-color="#8c6a35" stop-opacity="0"/></linearGradient></defs>
+<path d="M-10 110Q94 5 202 55T400 92" fill="none" stroke="url(#starArc)" stroke-width=".8"/>
+<g fill="none" stroke="#c7a35d" stroke-width=".55" opacity=".48"><path d="M28 77L76 55L112 72L156 39L195 61L237 32L281 56L321 42L370 77"/><path d="M76 55L92 95L112 72L139 98L156 39L174 83L195 61L220 95L237 32L260 78L281 56L306 92L321 42L344 67L370 77"/></g>
+<g fill="url(#starGlow)"><circle cx="76" cy="55" r="13"/><circle cx="156" cy="39" r="15"/><circle cx="237" cy="32" r="20"/><circle cx="321" cy="42" r="12"/><circle cx="370" cy="77" r="10"/></g>
+<g fill="#f5dfaa"><path d="M76 45L78 53L86 55L78 57L76 65L74 57L66 55L74 53Z"/><path d="M156 25L159 36L170 39L159 42L156 53L153 42L142 39L153 36Z"/><path d="M237 13L241 28L256 32L241 36L237 51L233 36L218 32L233 28Z"/><path d="M321 33L323 40L330 42L323 44L321 51L319 44L312 42L319 40Z"/><path d="M370 69L372 75L378 77L372 79L370 85L368 79L362 77L368 75Z"/></g>
+<g fill="#e9c982" opacity=".85"><circle cx="28" cy="77" r="1.4"/><circle cx="112" cy="72" r="1.2"/><circle cx="195" cy="61" r="1.6"/><circle cx="281" cy="56" r="1.4"/><circle cx="344" cy="67" r="1.2"/><circle cx="92" cy="95" r="1"/><circle cx="220" cy="95" r="1"/><circle cx="306" cy="92" r="1"/></g>
+<g fill="#c7a35d" opacity=".35"><circle cx="29" cy="185" r=".8"/><circle cx="72" cy="228" r=".8"/><circle cx="326" cy="176" r=".8"/><circle cx="355" cy="246" r=".8"/><circle cx="43" cy="347" r=".7"/><circle cx="340" cy="380" r=".8"/><circle cx="61" cy="530" r=".7"/><circle cx="318" cy="485" r=".8"/></g></svg>
 <div class="cover-watermark" aria-hidden="true">N<span>&amp;</span>A</div>
 <div class="cover-content">
 <div class="cover-intro">EL PRINCIPIO DE NUESTRA HISTORIA<br>FUE INESPERADO,</div><p class="cover-script">pero nuestro destino fue elegirnos.</p>
@@ -122,7 +140,29 @@
 <div class="cover-event"><svg viewBox="0 0 120 74" aria-hidden="true"><defs><linearGradient id="estateGold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f3d99c"/><stop offset="1" stop-color="#8c6a35"/></linearGradient></defs><g stroke="url(#estateGold)" stroke-linejoin="round"><path d="M8 65V31L20 23L32 31V65M32 65V20L51 9L70 20V65M70 65V34L83 26L96 34V65M96 65V43L107 36L116 43V65Z" fill="#c7a35d" fill-opacity=".13" stroke-width="1"/><path d="M38 65V42Q51 27 64 42V65M44 43V65M58 43V65M16 36H24M16 43H24M77 39H88M77 46H88M103 47H111M103 54H111" fill="none" stroke-width=".8"/><path d="M43 20H59M51 13V27M4 65H119M13 69H113" fill="none" stroke-width=".8"/><path d="M46 9L51 3L56 9" fill="#c7a35d" fill-opacity=".25" stroke-width=".8"/></g><g fill="#e7cd91" opacity=".7"><circle cx="20" cy="31" r="1"/><circle cx="51" cy="20" r="1.2"/><circle cx="83" cy="34" r="1"/></g></svg><div class="cover-event-label">CELEBRACIÓN</div><div class="cover-event-script">Lugar por confirmar</div><div class="cover-event-time">HORA POR CONFIRMAR</div></div>
 </div>
 <div class="cover-quote"><span>✦</span><p>NO ES LA FUERZA, NI EL PODER,<br>SINO LA ELECCIÓN DE CAMINAR JUNTOS<br>LO QUE NOS HACE <b>EXTRAORDINARIOS.</b></p></div>
-<div class="cover-bottom-art" aria-hidden="true"><svg viewBox="0 0 390 160" preserveAspectRatio="xMidYMax meet"><defs><linearGradient id="cityGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c7a35d" stop-opacity=".65"/><stop offset="1" stop-color="#c7a35d" stop-opacity="0"/></linearGradient></defs><path d="M0 145V112L7 109V92L12 87L17 92V109H22V73L28 65L34 73V109H39V96L45 91L51 96V145H56V82L63 76L70 82V145H76V116L83 109L90 116V145H96V89L103 81L110 89V145H116V101L122 95L128 101V145H134V75L140 62L145 75V145H151V99L158 92L165 99V145H171V119L178 112L185 119V145H191V88L197 79L203 88V145H209V105L216 99L223 105V145H229V121L236 114L243 121V145H249V89L255 77L261 89V145H267V108L274 101L281 108V145H287V95L294 88L301 95V145H307V75L313 62L319 75V145H325V113L332 106L339 113V145H345V91L352 84L359 91V145H365V105L372 98L379 105V145H390" fill="url(#cityGlow)" stroke="#c7a35d" stroke-width=".65" opacity=".8"/><path d="M0 145H390M0 151H390M5 145L25 132L43 145M70 145L88 133L105 145M270 145L288 132L305 145" fill="none" stroke="#c7a35d" stroke-width=".8"/><circle cx="194" cy="143" r="20" fill="#c7a35d" opacity=".08"/><path d="M194 117V153M176 143H212M182 131L206 155M206 131L182 155" stroke="#f1d9a2" stroke-width=".7" opacity=".8"/></svg></div>
+<div class="cover-bottom-art" aria-hidden="true"><svg viewBox="0 0 390 190" preserveAspectRatio="xMidYMax meet"><defs><linearGradient id="cityGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6c16e" stop-opacity=".5"/><stop offset=".55" stop-color="#c7a35d" stop-opacity=".13"/><stop offset="1" stop-color="#c7a35d" stop-opacity="0"/></linearGradient><linearGradient id="horizonGlow" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#c7a35d" stop-opacity="0"/><stop offset=".5" stop-color="#e7c575" stop-opacity=".8"/><stop offset="1" stop-color="#c7a35d" stop-opacity="0"/></linearGradient></defs>
+<ellipse cx="198" cy="172" rx="116" ry="23" fill="url(#horizonGlow)" opacity=".55"/>
+<g stroke="#c7a35d" stroke-width=".7" fill="url(#cityGlow)">
+<path d="M0 174V136L7 133V115L11 112V95L16 89L21 95V112H26V130L32 126V174Z"/>
+<path d="M28 174V119L36 112V88L42 81L48 88V112L55 119V174Z"/>
+<path d="M49 174V142L58 137V103L64 96L70 103V137L77 142V174Z"/>
+<path d="M72 174V124L79 117V75L86 66L93 75V117L100 124V174Z"/>
+<path d="M96 174V139L104 132V113L110 107L116 113V132L124 139V174Z"/>
+<path d="M121 174V126L128 119V93L134 86L140 93V119L147 126V174Z"/>
+<path d="M145 174V145L152 140V115L159 108L166 115V140L173 145V174Z"/>
+<path d="M168 174V119L176 111V86L183 78L190 86V111L198 119V174Z"/>
+<path d="M193 174V135L201 128V105L208 98L215 105V128L223 135V174Z"/>
+<path d="M219 174V124L227 117V88L234 80L241 88V117L249 124V174Z"/>
+<path d="M245 174V143L252 136V112L259 105L266 112V136L273 143V174Z"/>
+<path d="M270 174V121L278 113V91L285 83L292 91V113L300 121V174Z"/>
+<path d="M297 174V137L304 130V104L311 97L318 104V130L326 137V174Z"/>
+<path d="M322 174V126L330 119V92L337 84L344 92V119L352 126V174Z"/>
+<path d="M348 174V145L355 139V119L361 113L367 119V139L374 145V174Z"/>
+<path d="M370 174V132L377 126V109L382 103L387 109V126L390 129V174Z"/>
+</g>
+<g stroke="#e0bd70" stroke-width=".45" opacity=".8" fill="none"><path d="M5 146H17M5 153H17M35 126H47M35 134H47M81 88H91M81 96H91M81 104H91M129 106H138M129 114H138M178 99H188M178 107H188M230 98H239M230 106H239M281 101H290M281 109H290M333 101H342M333 109H342"/><path d="M0 174H390M0 180H390M18 174L43 160L61 174M65 174L91 158L113 174M265 174L286 157L310 174M327 174L350 160L371 174"/></g>
+<g fill="#f4dca0" opacity=".72"><rect x="8" y="121" width="1.5" height="3"/><rect x="39" y="96" width="1.5" height="3"/><rect x="85" y="78" width="1.5" height="3"/><rect x="132" y="98" width="1.5" height="3"/><rect x="181" y="91" width="1.5" height="3"/><rect x="232" y="94" width="1.5" height="3"/><rect x="283" y="97" width="1.5" height="3"/><rect x="334" y="99" width="1.5" height="3"/></g>
+<circle cx="198" cy="170" r="23" fill="#d8b15e" opacity=".1"/><path d="M198 145V177M183 161H213M188 150L208 172M208 150L188 172" stroke="#f1d9a2" stroke-width=".75" opacity=".9"/></svg></div>
 <div class="cover-cta"><div class="cover-cta-star">✦</div><div class="cover-cta-text">ABRE TU INVITACIÓN<br>Y CONFIRMA TU ASISTENCIA<br>PARA DESCUBRIR LOS DETALLES<br>DE NUESTRO GRAN DÍA.</div></div>
 <button class="btn cover-open" id="openBtn">ABRIR INVITACIÓN <span>↗</span></button>
 <div class="cover-foot">UNA NUEVA AVENTURA COMIENZA AQUÍ ✧</div></div></section>
